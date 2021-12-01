@@ -1,19 +1,12 @@
-import { readInput } from '../helpers';
+import * as helpers from '../helpers';
 
 
-// readInputFromURL("https://adventofcode.com/2021/day/1/input").then(input => {
-// 	const inputNums=input.map(str=>Number.parseInt(str));
-// 	const output1 = aocD1Q1(inputNums);
-// 	const output2 = aocD1Q1(aocD1Q2(inputNums));
-// 	console.log(output1);
-// 	console.log(output2);
-// });
-const input=readInput('../../input.txt');
-	const inputNums=input.map(str=>Number.parseInt(str));
-	const output1 = aocD1Q1(inputNums);
-	const output2 = aocD1Q1(aocD1Q2(inputNums));
-	console.log(output1);
-	console.log(output2);
+const input = helpers.readInput('../../inputs/input1.txt');
+const inputNums = input.map(str => Number.parseInt(str));
+const output1 = aocD1Q1(inputNums);
+const output2 = aocD1Q1(aocD1Q2(inputNums));
+console.log(output1);
+console.log(output2);
 /**
  * 
  * @param input 
