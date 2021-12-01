@@ -1,6 +1,5 @@
 import * as helpers from '../helpers';
 
-
 const input = helpers.readInput('../../inputs/input1.txt');
 const inputNums = input.map(str => Number.parseInt(str));
 const output1 = aocD1Q1(inputNums);
