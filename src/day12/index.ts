@@ -1,4 +1,3 @@
-import { start } from 'repl';
 import * as helpers from '../helpers';
 const input = helpers.readInput('../../inputs/input12.txt').map(str => str.split('-'));
 
