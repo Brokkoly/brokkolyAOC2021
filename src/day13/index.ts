@@ -18,11 +18,20 @@ interface IFold{
 }
 
 
-function doFold(coordinates: number[], fold: IFold): [number,number]{
-    if(fold.along==='x'){
-        return [foldCoord(coordinates[0],fold.coordinate),coordinates[1]];
+function doFold(coordinates: number[], folds: IFold|IFold[]): number[]{
+    if(!Array.isArray(folds)){
+        folds=[folds];
     }
-    return [coordinates[0],foldCoord(coordinates[1],fold.coordinate)];
+    let retCoords:number[]=[...coordinates];
+    folds.forEach(fold=>{
+        if(fold.along==='x'){
+            retCoords = [foldCoord(coordinates[0],fold.coordinate),coordinates[1]];
+        }
+        else{
+            retCoords= [coordinates[0],foldCoord(coordinates[1],fold.coordinate)];
+        }
+    })
+    return retCoords;   
 }
 
 function foldCoord(coordinate: number, foldLine: number): number{
